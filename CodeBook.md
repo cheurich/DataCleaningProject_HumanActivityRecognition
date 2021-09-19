@@ -7,17 +7,17 @@
 The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. 
 The goal is to prepare tidy data that can be used for later analysis.
 
-## Study design and row data processing
+## Study design and raw data processing
 
-### Collection of the row data
+### Collection of the raw data
 
 The data  was collected from the accelerometers from the Samsung Galaxy S smartphone.
 A full description is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-### The original row data 
+### The original raw data 
 
-The row data can be downloaded from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+The raw data can be downloaded from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ## Creating the tidy data file
 
@@ -48,7 +48,7 @@ The dimension of the tidy dataset: *180 rows* and *89 columns*.
 
 There are *89 columns/variables* in the tidy datatset.
 
-The *columns [,3:88]* represent the selected mean and standard deviation variables from the row dataset. They are numerical and the values represent the mean calculated for each activity and each subject.
+The *columns [,3:88]* represent the selected mean and standard deviation variables from the raw dataset. They are numerical and the values represent the mean calculated for each activity and each subject.
 
 Furthermore there are added another 3 columns: 
 *"Subject"* - the volunteer number (in total a number of 30 volunteers).        
