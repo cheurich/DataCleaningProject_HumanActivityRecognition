@@ -7,17 +7,17 @@
 The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. 
 The goal is to prepare tidy data that can be used for later analysis.
 
-## Study design and raw data processing
+## Study design and row data processing
 
-### Collection of the raw data
+### Collection of the row data
 
 The data  was collected from the accelerometers from the Samsung Galaxy S smartphone.
 A full description is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-### The original raw data 
+### The original row data 
 
-The raw data can be downloaded from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+The row data can be downloaded from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ## Creating the tidy data file
 
@@ -42,22 +42,22 @@ Some getting and cleaning data tasks realized in the *"run_analysis.R"* script a
 
 ## Variables
 
-The dimension of the tidy dataset: *180 raws* and *89 columns*.
+The dimension of the tidy dataset: *180 rows* and *89 columns*.
 
 ### **Columns/Features**
 
 There are *89 columns/variables* in the tidy datatset.
 
-The *columns [,3:88]* represent the selected mean and standard deviation variables from the raw dataset. They are numerical and the values represent the mean calculated for each activity and each subject.
+The *columns [,3:88]* represent the selected mean and standard deviation variables from the row dataset. They are numerical and the values represent the mean calculated for each activity and each subject.
 
 Furthermore there are added another 3 columns: 
 *"Subject"* - the volunteer number (in total a number of 30 volunteers).        
 *"Activity"* - the activity on which the measurements were made ("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING").                       
 *"Labels"* - the labels of the activity on which the measurements were made (1, 2, 3, 4, 5, 6).
 
-### **Raws/Observations**
+### **Rows/Observations**
 
-There are *180 Raws/Observations* in the tidy data. Grouping by each subject and activity, it gets just 6 observations per volunteer, or just one value per activity and volunteer/subject (30 subjects * 6 activities = 180 Raws).
+There are *180 Rows/Observations* in the tidy data. Grouping by each subject and activity, it gets just 6 observations per volunteer, or just one value per activity and volunteer/subject (30 subjects * 6 activities = 180 rows).
 
 ## Variables list
 

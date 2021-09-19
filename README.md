@@ -15,7 +15,7 @@ The goal is to prepare tidy data that can be used for later analysis.
 
 * *"tidydata.txt"*: The tidy dataset, contains all the variables, grouped by each subject and activity, getting just 6 observations per volunteer, or just one value per activity and volunteer/subject.
 
-* *"run_analysis.R"*: The R script, contains all the code instructions needed, to output the tidy data set from the raw data set.
+* *"run_analysis.R"*: The R script, contains all the code instructions needed, to output the tidy data set from the row data set.
 
 ### REVIEW CRITERIA
 1. The submitted data set is tidy. 
