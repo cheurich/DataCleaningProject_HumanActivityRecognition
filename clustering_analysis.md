@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 Human Activity Recognition - Clustering Analysis
 ================
 swirl - Data Science - Exploratory data analysis - Clustering
@@ -207,9 +212,9 @@ body acceleration in the X and Y directions for the first subject.
 
 <div class="figure">
 
-<img src="./images/Rplot1_BodyAccelerationMeanXY_by_Activities.png" alt="Body Acceleration Mean (X,Y) by Activities" width="100%" />
+<img src="./images/1Rplot1_BodyAccelerationMeanXY_by_Activities.png" alt="Body Acceleration Mean (X,Y) by Activities (Subject 1)" width="100%" />
 <p class="caption">
-Body Acceleration Mean (X,Y) by Activities
+Body Acceleration Mean (X,Y) by Activities (Subject 1)
 </p>
 
 </div>
@@ -219,6 +224,17 @@ in the two blues and magenta) show more variability than the passive
 activities (shown in black, red, and green), particularly in the X
 dimension.
 
+Let's see (Figure 2) the same figure but now for all the 30 subjects.
+<div class="figure">
+
+<img src="./images/allRplot1_BodyAccelerationMeanXY_by_Activities.png" alt="Body Acceleration Mean (X,Y) by Activities (all Subjects)" width="100%" />
+<p class="caption">
+Body Acceleration Mean (X,Y) by Activities (all Subjects)
+</p>
+
+</div>
+
+
 ## 4.1 Hierarchical clustering
 
 Let’s try hierarchical clustering to see if we can distinguish the
@@ -226,14 +242,14 @@ activities more.
 
 <div class="figure">
 
-<img src="./images/Rplot2_Clustering_activity_colors.png" alt="Hierarchical Clustering, active and passive activity colors" width="100%" />
+<img src="./images/2Rplot2_Clustering_activity_colors.png" alt="Hierarchical Clustering, active and passive activity colors (Subject 1)" width="100%" />
 <p class="caption">
-Hierarchical Clustering, active and passive activity colors
+Hierarchical Clustering, active and passive activity colors (Subject 1)
 </p>
 
 </div>
 
-There’s no clear grouping of colors (Figure 2), except that active
+There’s no clear grouping of colors (Figure 3), except that active
 colors (blues and magenta) are near each other as are the passive
 (black, red, and green) maximum acceleration.
 
@@ -241,14 +257,14 @@ Let’s focus then on the 3 dimensions of maximum acceleration.
 
 <div class="figure">
 
-<img src="./images/Rplot3_Clustering_active_pasive_activities.png" alt="Hierarchical Clustering, 2 Clusters for active and passive activities" width="100%" />
+<img src="./images/3Rplot3_Clustering_active_pasive_activities.png" alt="Hierarchical Clustering, 2 Clusters for active and passive activities (Subject 1)" width="100%" />
 <p class="caption">
-Hierarchical Clustering, 2 Clusters for active and passive activities
+Hierarchical Clustering, 2 Clusters for active and passive activities (Subject 1)
 </p>
 
 </div>
 
-Now we see clearly that the data splits into 2 clusters (Figure 3),
+Now we see clearly that the data splits into 2 clusters (Figure 4),
 active and passive activities. Moreover, the light blue (walking down)
 is clearly distinct from the other walking activities. The dark blue
 (walking level) also seems to be somewhat clustered. The passive
@@ -261,16 +277,28 @@ Let’s try some SVD now.
 
 ### 4.2.1 Left Singular Vectors, U-Matrix of SVD
 
+Just subject 1:
+
 <div class="figure">
 
-<img src="./images/Rplot4_SVD_U.png" alt="SVD - The 2 LEFT singular vectors of U-Matrix" width="100%" />
+<img src="./images/4Rplot4_SVD_U.png" alt="SVD - The 2 LEFT singular vectors of U-Matrix (Subject 1)" width="100%" />
 <p class="caption">
-SVD - The 2 LEFT singular vectors of U-Matrix
+SVD - The 2 LEFT singular vectors of U-Matrix (Subject 1)
 </p>
 
 </div>
 
-Here (Figure 4) we’re looking at the 2 left singular vectors of SVD (the
+All 30 Subjects:
+<div class="figure">
+
+<img src="./images/allRplot4_SVD_U.png" alt="SVD - The 2 LEFT singular vectors of U-Matrix (all Subjects)" width="100%" />
+<p class="caption">
+SVD - The 2 LEFT singular vectors of U-Matrix (all Subjects)
+</p>
+
+</div>
+
+Here (Figure 5) we’re looking at the 2 left singular vectors of SVD (the
 first 2 columns of the U-Matrix of SVD). Each entry of the columns
 belongs to a particular row with one of the 6 activities assigned to it.
 We see the activities distinguished by color. Moving from left to right,
@@ -291,29 +319,41 @@ cluster stood out in the second column of V-Matrix.
 
 <div class="figure">
 
-<img src="./images/Rplot5_SVD_V.png" alt="SVD - The second Right singular vector of V-Matrix" width="100%" />
+<img src="./images/5Rplot5_SVD_V.png" alt="SVD - The second Right singular vector of V-Matrix (Subject 1)" width="100%" />
 <p class="caption">
-SVD - The second Right singular vector of V-Matrix
+SVD - The second Right singular vector of V-Matrix (Subject 1)
 </p>
 
 </div>
 
-Here’s a plot (Figure 5) of the second column of the V-Matrix. We used
+Here’s a plot (Figure 7) of the second column of the V-Matrix. We used
 transparency in our plotting but nothing clearly stands out here. Let’s
 use clustering to find the feature (out of the 500+) which contributes
 the most to the variation of this second column of the V-Matrix.
 
+Subject 1:
 <div class="figure">
 
-<img src="./images/Rplot6_Hierarchical_Clustering_Max.png" alt="Hierarchical Clustering, Feature Maximal Variationof the second column of V-Matrix" width="100%" />
+<img src="./images/6Rplot6_Hierarchical_Clustering_Max.png" alt="Hierarchical Clustering, Feature Maximal Variation of the second column of V-Matrix (Subject 1)" width="100%" />
 <p class="caption">
-Hierarchical Clustering, Feature Maximal Variationof the second column
-of V-Matrix
+Hierarchical Clustering, Feature Maximal Variation of the second column
+of V-Matrix (Subject 1)
 </p>
 
 </div>
 
-Now (Figure 6) we see some real separation. Magenta (walking up) is on
+All Subjects:
+<div class="figure">
+
+<img src="./images/allRplot6_Hierarchical_Clustering_Max.png" alt="Hierarchical Clustering, Feature Maximal Variation of the second column of V-Matrix (all Subjects)" width="100%" />
+<p class="caption">
+Hierarchical Clustering, Feature Maximal Variation of the second column
+of V-Matrix (all Subjects)
+</p>
+
+</div>
+
+Now (Figure 8) we see some real separation. Magenta (walking up) is on
 the far left, and the two other walking activities, the two blues, are
 on the far right, but in separate clusters from one another. The
 nonmoving activities still are jumbled together.
@@ -364,14 +404,14 @@ the features (columns) of these centers to see if any dominate.
 
 <div class="figure">
 
-<img src="./images/Rplot7_K-Means_laying.png" alt="K-Means Laying Cluster" width="100%" />
+<img src="./images/7Rplot7_K-Means_laying.png" alt="K-Means Laying Cluster (Subject 1)" width="100%" />
 <p class="caption">
-K-Means Laying Cluster
+K-Means Laying Cluster (Subject 1)
 </p>
 
 </div>
 
-We see (Figure 7) the first 3 columns dominate this cluster center.
+We see (Figure 10) the first 3 columns dominate this cluster center.
 Their names are:
 
     ## [1] "tBodyAcc-mean()-X" "tBodyAcc-mean()-Y" "tBodyAcc-mean()-Z"
@@ -383,14 +423,14 @@ See the columns which dominate walkdown.
 
 <div class="figure">
 
-<img src="./images/Rplot8_K-Means_walkdown.png" alt="K-Means Walkdown Cluster" width="100%" />
+<img src="./images/8Rplot8_K-Means_walkdown.png" alt="K-Means Walkdown Cluster (Subject 1)" width="100%" />
 <p class="caption">
-K-Means Walkdown Cluster
+K-Means Walkdown Cluster (Subject 1)
 </p>
 
 </div>
 
-We see (Figure 8) an interesting pattern here. From left to right,
+We see (Figure 11) an interesting pattern here. From left to right,
 looking at the 12 acceleration measurements in groups of 3, the points
 decrease in value. The X direction dominates, followed by Y then Z. This
 might tell us something more about the walking down activity.
