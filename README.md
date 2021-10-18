@@ -6,7 +6,7 @@
 
 ### PROJECT GOAL
 
-The purpose of this project is to demonstrate my the ability to collect, clean and conduct exploratory data analysis on a data set.
+The purpose of this project is to collect, clean and conduct exploratory data analysis on a data set.
 
 ### THIS REPO INCLUDES THE FOLLOWING FILES
 

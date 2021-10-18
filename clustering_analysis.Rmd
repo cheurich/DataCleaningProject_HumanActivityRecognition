@@ -3,9 +3,9 @@ title: "Human Activity Recognition - Clustering Analysis"
 author: "swirl - Data Science - Exploratory data analysis - Clustering"
 date: "18.10.2021"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 header-includes:
 - \usepackage{makeidx}
 - \makeindex
