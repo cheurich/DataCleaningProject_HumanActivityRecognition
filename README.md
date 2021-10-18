@@ -12,11 +12,11 @@ The purpose of this project is to collect, clean and conduct exploratory data an
 
 * *"README.md"*: Explains the analysis files and give some general information about this project.
 
+* *"clustering_analysis.md"*: A Markdown script, documenting the clustering analysis and visualize the data.
+
 * *"getting_cleaning_data.R"*: The R script, contains all the code instructions needed, to output the dataframe for clustering analysis and the tidy data set from the raw data set.
 
 * *"clustering_analysis.R"*: The script that analyses and plots the data, applying Hierarchical and K-Means clustering methods.
-
-* *"clustering_analysis.Rmd"*: A R Markdown script, documenting the clustering analysis and visualise the data.
 
 * *"CodeBook.md"*: Describes the variables, the data, and any transformations or work that it have been performed to clean up the data. Shows information about the variables and the summaries calculated and the type. It contains also the list of all features in the tidy data.
 
