@@ -3,9 +3,10 @@ title: "Human Activity Recognition - Clustering Analysis"
 author: "swirl - Data Science - Exploratory data analysis - Clustering"
 date: "18.10.2021"
 output:
+  github_document:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
 header-includes:
 - \usepackage{makeidx}
 - \makeindex
@@ -15,7 +16,7 @@ header-includes:
 knitr::opts_chunk$set("clustering_analysis.R", echo = TRUE, cache=FALSE, eval = TRUE, error = TRUE)
 ```
 
-# 1. Intro \index{Intro}
+# 1. Intro
 
 The goal is to conduct exploratory data analysis on the 
 Human Activity Recognition Using Smartphones Data Set from the UCI Machine Learning Repository, http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.
@@ -27,7 +28,7 @@ The "getting_cleaning_data.R" file aggregates both the Train and test data sets 
 The "clustering_analysis.R" analyses and plots the data, applying Hierarchical and K-Means clustering methods.
 
 
-# 2. Data \index{Data}
+# 2. Data
 
 Let's understand tha Data: what kind of data we have?
 
@@ -75,7 +76,7 @@ load("env.RData")
 knitr::kable(str(dfr), caption="Variables")
 ```
 
-# 4. Exploratory data analysis \index{Exploratory data analysis}
+# 4. Exploratory data analysis
 
 Let's look at only the first subject (numbered 1) which has a number of 347 measurements as seen before. See the measurement of the first 6 subjects out of 30:
 
@@ -94,7 +95,7 @@ knitr::include_graphics("./images/Rplot1_BodyAccelerationMeanXY_by_Activities.pn
 
 We see (Figure 1) that the active activities related to walking (shown in the two blues and magenta) show more variability than the passive activities (shown in black, red, and green), particularly in the X dimension.
 
-## 4.1 Hierarchical clustering \index{Hierarchical clustering}
+## 4.1 Hierarchical clustering
 
 Let's try hierarchical clustering to see if we can distinguish the activities more.
 
@@ -114,11 +115,11 @@ knitr::include_graphics("./images/Rplot3_Clustering_active_pasive_activities.png
 
 Now we see clearly that the data splits into 2 clusters (Figure 3), active and passive activities. Moreover, the light blue (walking down) is clearly distinct from the other walking activities. The dark blue (walking level) also seems to be somewhat clustered. The passive activities, however, seem all jumbled together with no clear pattern visible.
 
-## 4.2 SVD Clustering - Singular Value Decomposition \index{SVD Clustering - Singular Value Decomposition}
+## 4.2 SVD Clustering - Singular Value Decomposition 
 
 Let's try some SVD now.
 
-### 4.2.1 Left Singular Vectors, U-Matrix of SVD \index{Left Singular Vectors, U-Matrix of SVD}
+### 4.2.1 Left Singular Vectors, U-Matrix of SVD
 
 ```{r SVD_2LeftSingularVect_U-Matrix, echo=FALSE, fig.cap="SVD - The 2 LEFT singular vectors of U-Matrix", out.width = '100%'}
 load("env.RData")
@@ -129,7 +130,7 @@ Here (Figure 4) we're looking at the 2 left singular vectors of SVD (the first 2
 
 We'll try to figure out why that is. To do that we'll have to find which of the 500+ measurements contributes to the variation of that component. We'll look at the RIGHT singular vectors the columns of V-Matrix), and in particular, the second one since the separation of the magenta cluster stood out in the second column of V-Matrix.
 
-### 4.2.2 Right Singular Vectors, V-Matrix of SVD \index{Right Singular Vectors, V-Matrix of SVD}
+### 4.2.2 Right Singular Vectors, V-Matrix of SVD
 
 ```{r SVD_2ndRightSingularVect_V-Matrix, echo=FALSE, fig.cap="SVD - The second Right singular vector of V-Matrix", out.width = '100%'}
 load("env.RData")
@@ -154,7 +155,7 @@ names(sub1[maxCon])
 
 So the mean body acceleration in the frequency domain in the Z direction is the main contributor to this clustering phenomenon we're seeing.
 
-## 4.3 K-Means Clustering \index{K-Means Clustering}
+## 4.3 K-Means Clustering
 
 Let's move on to k-means clustering to see if this technique can distinguish between the activities.
 
